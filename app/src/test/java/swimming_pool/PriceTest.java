@@ -5,6 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PriceTest{
 
+    /**
+     * Test a person
+     */
+
     // 2, 1200, is menber
     @Test public void test_is_menber(){
         Person p = new Person(25, true, false);

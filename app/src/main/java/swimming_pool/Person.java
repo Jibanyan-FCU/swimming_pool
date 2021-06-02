@@ -3,13 +3,12 @@ package swimming_pool;
 public class Person{
     private int age;
     private boolean is_menber;
-    private boolean is_group;
     private String identity;
 
     public Person(int age, boolean is_menber, boolean is_group) throws IllegalArgumentException{
         this.age = age;
         this.is_menber = is_menber;
-        this.identity = null;
+        this.identity = "Normal";
 
         age_limit();
     }

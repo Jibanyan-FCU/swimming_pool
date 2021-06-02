@@ -12,7 +12,7 @@ public class GroupTicket extends Ticket{
         this.date = date;
         this.time = time;
         this.people = people;
-        is_group = (people.length > 5);
+        is_group = (people.length >= 5);
         this.is_course = is_course;
         this.hours = hours;
     }
@@ -25,7 +25,7 @@ public class GroupTicket extends Ticket{
         else if(people[index].is_concession() || is_group){
             price *= 0.7;
         }
-        else if(time < 0700){
+        else if(time < 700){
             price *= 0.8;
         }
         return price;
@@ -58,7 +58,7 @@ public class GroupTicket extends Ticket{
             }
             // "pre preiod" change to "pre hour"
             else{
-                sum = 120 * coach_num + 70 * (len - coach_num);
+                sum = hours * (120 * coach_num + 70 * (len - coach_num));
             }
         }
         else{
