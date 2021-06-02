@@ -1,7 +1,7 @@
 package swimming_pool;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PriceTest{
 
@@ -44,6 +44,14 @@ public class PriceTest{
         PersonalTicket t = new PersonalTicket(p, 2, 1200);
 
         assertEquals(140, t.get_price());
+    }
+
+    // normal
+    @Test public void test_normal(){
+        Person p = new Person(27, false, false);
+        PersonalTicket t = new PersonalTicket(p, 5, 1130);
+
+        assertEquals(200, t.get_price());
     }
 
     // illegal time
