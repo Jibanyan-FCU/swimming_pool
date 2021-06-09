@@ -2,47 +2,47 @@ package swimming_pool;
 
 public class Person{
     private int age;
-    private boolean is_menber;
+    private boolean isMenber;
     private String identity;
 
-    public Person(int age, boolean is_menber, boolean is_group) throws IllegalArgumentException{
+    public Person(int age, boolean isMenber) throws IllegalArgumentException{
         this.age = age;
-        this.is_menber = is_menber;
+        this.isMenber = isMenber;
         this.identity = "Normal";
 
-        age_limit();
+        ageLimit();
     }
 
-    public Person(int age, boolean is_menber, boolean is_group, String identity) throws IllegalArgumentException{
+    public Person(int age, boolean is_menber, String identity) throws IllegalArgumentException{
         this.age = age;
-        this.is_menber = is_menber;
+        this.isMenber = is_menber;
         this.identity = identity;
 
-        age_limit();
+        ageLimit();
     }
 
-    public int get_age(){
+    public int getAge(){
         return age;
     }
 
 
-    public boolean is_menber(){
-        return is_menber;
+    public boolean isMenber(){
+        return isMenber;
     }
 
-    public boolean is_coach(){
+    public boolean isCoach(){
         return identity.equals("Coach");
     }
 
-    public boolean is_student(){
+    public boolean isStudent(){
         return identity.equals("Student");
     }
 
-    public boolean is_concession(){
+    public boolean isConcession(){
         return age <= 12 || age >= 60;
     }
 
-    public void age_limit() throws IllegalArgumentException{
+    public void ageLimit() throws IllegalArgumentException{
         if(age < 3 || age > 75){
             throw new IllegalArgumentException("Age too big or too small.");
         }

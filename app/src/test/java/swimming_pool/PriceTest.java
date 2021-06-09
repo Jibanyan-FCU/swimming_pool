@@ -11,51 +11,51 @@ public class PriceTest{
 
     // 2, 1200, is menber
     @Test public void test_is_menber(){
-        Person p = new Person(25, true, false);
+        Person p = new Person(25, true);
         PersonalTicket t = new PersonalTicket(p, 2, 1200);
 
-        int resule = t.get_price();
+        int resule = t.getPrice();
         assertEquals(100, resule);
     }
 
     // 6, 1200
     @Test public void test_2_1200(){
-        Person p = new Person(25, false, false);
+        Person p = new Person(25, false);
         PersonalTicket t = new PersonalTicket(p, 6, 1200);
 
-        assertEquals(250, t.get_price());
+        assertEquals(250, t.getPrice());
     }
 
     // 2, 0600
     @Test public void test_2_0630(){
-        Person p = new Person(25, false, false);
+        Person p = new Person(25, false);
         PersonalTicket t = new PersonalTicket(p, 2, 600);
 
-        assertEquals(160, t.get_price());
+        assertEquals(160, t.getPrice());
     }
 
     // age: 4
     @Test public void test_age_4(){
-        Person p = new Person(4, false, false);
+        Person p = new Person(4, false);
         PersonalTicket t = new PersonalTicket(p, 2, 1200);
 
-        assertEquals(140, t.get_price());
+        assertEquals(140, t.getPrice());
     }
 
     // age: 66
     @Test public void test_age_66(){
-        Person p = new Person(66, false, false);
+        Person p = new Person(66, false);
         PersonalTicket t = new PersonalTicket(p, 2, 1200);
 
-        assertEquals(140, t.get_price());
+        assertEquals(140, t.getPrice());
     }
 
     // normal
     @Test public void test_normal(){
-        Person p = new Person(27, false, false);
+        Person p = new Person(27, false);
         PersonalTicket t = new PersonalTicket(p, 5, 1130);
 
-        assertEquals(200, t.get_price());
+        assertEquals(200, t.getPrice());
     }
 
     // illegal time
@@ -81,7 +81,7 @@ public class PriceTest{
 
     // illegal age
     @Test public void test_illegal_age(){
-        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> new Person(200, false, false));
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> new Person(200, false));
 
         assertEquals("Age too big or too small.", e.getMessage());
     }

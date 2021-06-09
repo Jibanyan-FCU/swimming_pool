@@ -9,18 +9,18 @@ public class PersonalTicket extends Ticket{
         this.time = time;
         this.person = p;
 
-        date_limit();
-        time_limit();
+        dateLimit();
+        timeLimit();
     }
 
-    public int get_price(){
+    public int getPrice(){
 
-        int price = is_weekend() ? 250 : 200;
-        if(person.is_menber()){
+        int price = isWeekend() ? 250 : 200;
+        if(person.isMenber()){
             price *= 0.5;
         }
         // a person can't get group ticket
-        else if(person.is_concession()){
+        else if(person.isConcession()){
             price *= 0.7;
         }
         else if(time < 700){

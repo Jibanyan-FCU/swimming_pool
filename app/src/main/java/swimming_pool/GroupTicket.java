@@ -18,11 +18,11 @@ public class GroupTicket extends Ticket{
     }
 
     public int get_personal_price(int index){
-        int price = is_weekend() ? 250 : 200;
-        if(people[index].is_menber()){
+        int price = isWeekend() ? 250 : 200;
+        if(people[index].isMenber()){
             price *= 0.5;
         }
-        else if(people[index].is_concession() || is_group){
+        else if(people[index].isConcession() || is_group){
             price *= 0.7;
         }
         else if(time < 700){
@@ -41,12 +41,12 @@ public class GroupTicket extends Ticket{
         return prices;
     }
 
-    public int get_price(){
+    public int getPrice(){
         int sum = 0;
 
         int coach_num = 0;
         for(Person p: people){
-            if(p.is_coach()){
+            if(p.isCoach()){
                 coach_num ++;
             }
         }
