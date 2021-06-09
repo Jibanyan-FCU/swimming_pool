@@ -44,21 +44,21 @@ public class GroupTicket extends Ticket{
     public int getPrice(){
         int sum = 0;
 
-        int coach_num = 0;
+        int coachNum = 0;
         for(Person p: people){
             if(p.isCoach()){
-                coach_num ++;
+                coachNum ++;
             }
         }
 
-        if (isCourse && coach_num > 0){
+        if (isCourse && coachNum > 0){
             int len = people.length;
             if(len < 10){
                 sum = 3000 * hours;
             }
             // "pre preiod" change to "pre hour"
             else{
-                sum = hours * (120 * coach_num + 70 * (len - coach_num));
+                sum = hours * (120 * coachNum + 70 * (len - coachNum));
             }
         }
         else{

@@ -3,14 +3,14 @@ package swimming_pool;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PriceTest{
+class PriceTest{
 
     /**
      * Test a person
      */
 
     // 2, 1200, is menber
-    @Test public void testIsMenber(){
+    @Test void testIsMenber(){
         Person p = new Person(25, true);
         PersonalTicket t = new PersonalTicket(p, 2, 1200);
 
@@ -19,7 +19,7 @@ public class PriceTest{
     }
 
     // 6, 1200
-    @Test public void test_2_1200(){
+    @Test void test_2_1200(){
         Person p = new Person(25, false);
         PersonalTicket t = new PersonalTicket(p, 6, 1200);
 
@@ -27,7 +27,7 @@ public class PriceTest{
     }
 
     // 2, 0600
-    @Test public void test_2_0630(){
+    @Test void test_2_0630(){
         Person p = new Person(25, false);
         PersonalTicket t = new PersonalTicket(p, 2, 600);
 
@@ -35,7 +35,7 @@ public class PriceTest{
     }
 
     // age: 4
-    @Test public void test_age_4(){
+    @Test void test_age_4(){
         Person p = new Person(4, false);
         PersonalTicket t = new PersonalTicket(p, 2, 1200);
 
@@ -43,7 +43,7 @@ public class PriceTest{
     }
 
     // age: 66
-    @Test public void test_age_66(){
+    @Test void test_age_66(){
         Person p = new Person(66, false);
         PersonalTicket t = new PersonalTicket(p, 2, 1200);
 
@@ -51,7 +51,7 @@ public class PriceTest{
     }
 
     // normal
-    @Test public void test_normal(){
+    @Test void test_normal(){
         Person p = new Person(27, false);
         PersonalTicket t = new PersonalTicket(p, 5, 1130);
 
@@ -59,7 +59,7 @@ public class PriceTest{
     }
 
     // illegal time
-    @Test public void test_illegal_time(){
+    @Test void test_illegal_time(){
         IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> new PersonalTicket(null, 2, 2300));
 
         assertEquals("Number of time is out of range(0500~2200).", e.getMessage());

@@ -13,9 +13,9 @@ public class Person{
         ageLimit();
     }
 
-    public Person(int age, boolean is_menber, String identity) throws IllegalArgumentException{
+    public Person(int age, boolean isMenber, String identity) throws IllegalArgumentException{
         this.age = age;
-        this.isMenber = is_menber;
+        this.isMenber = isMenber;
         this.identity = identity;
 
         ageLimit();

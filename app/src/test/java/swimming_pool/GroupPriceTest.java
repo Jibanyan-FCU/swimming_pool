@@ -3,13 +3,13 @@ package swimming_pool;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class GroupPriceTest {
+class GroupPriceTest {
     
     /**
      * Test a group of people
      */
 
-    @Test public void test_people_less_than_5(){
+    @Test void test_people_less_than_5(){
         Person p1 = new Person(25, true);
         Person p2 = new Person(25, false);
         Person p3 = new Person(25, false);
@@ -19,7 +19,7 @@ public class GroupPriceTest {
         assertEquals(500, t.getPrice());
     }
 
-    @Test public void test_people_equal_5(){
+    @Test void test_people_equal_5(){
         Person p1 = new Person(25, false);
         Person p2 = new Person(25, false);
         Person p3 = new Person(25, false);
@@ -31,7 +31,7 @@ public class GroupPriceTest {
         assertEquals(700, t.getPrice());
     }
 
-    @Test public void test_course_less_than_10(){
+    @Test void test_course_less_than_10(){
         Person p1 = new Person(25, false, "Coach");
         Person p2 = new Person(25, false);
         Person p3 = new Person(25, false);
@@ -43,7 +43,7 @@ public class GroupPriceTest {
         assertEquals(6000, t.getPrice());
     }
 
-    @Test public void test_course_equal_10(){
+    @Test void test_course_equal_10(){
         Person p1 = new Person(25, false, "Coach");
         Person p2 = new Person(25, false);
         Person p3 = new Person(25, false);
