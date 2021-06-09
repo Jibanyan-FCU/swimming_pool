@@ -67,20 +67,20 @@ class PriceTest{
 
     
     // illegal minent
-    @Test public void test_illegal_minent(){
+    @Test void test_illegal_minent(){
         IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> new PersonalTicket(null, 2, 1290));
 
         assertEquals("Incorrect value of minute(00~59)", e.getMessage());
     }
     // illegal date
-    @Test public void test_illegal_date(){
+    @Test void test_illegal_date(){
         IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> new PersonalTicket(null, 9, 1200));
 
         assertEquals("Number of date is out of range(1~7).", e.getMessage());
     }
 
     // illegal age
-    @Test public void test_illegal_age(){
+    @Test void test_illegal_age(){
         IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> new Person(200, false));
 
         assertEquals("Age too big or too small.", e.getMessage());

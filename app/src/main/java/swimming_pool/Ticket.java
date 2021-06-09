@@ -25,7 +25,6 @@ public abstract class Ticket{
             throw new IllegalArgumentException("Number of time is out of range(0500~2200).");
         }
         else if((time % 100)> 59 && (time%100)!=0){
-            System.out.println(time%100);
             throw new IllegalArgumentException("Incorrect value of minute(00~59)");
         }
     }
