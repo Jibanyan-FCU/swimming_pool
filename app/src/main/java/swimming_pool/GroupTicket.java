@@ -3,26 +3,26 @@ package swimming_pool;
 public class GroupTicket extends Ticket{
     
     private Person[] people;
-    private boolean is_group;
-    private boolean is_course;
+    private boolean isGroup;
+    private boolean isCourse;
     private int hours;
 
     // group ticket mush has at least 5 people
-    public GroupTicket(Person[] people, int date, int time, int hours, boolean is_course){
+    public GroupTicket(Person[] people, int date, int time, int hours, boolean isCourse){
         this.date = date;
         this.time = time;
         this.people = people;
-        is_group = (people.length >= 5);
-        this.is_course = is_course;
+        isGroup = (people.length >= 5);
+        this.isCourse = isCourse;
         this.hours = hours;
     }
 
-    public int get_personal_price(int index){
+    public int getPersonalPrice(int index){
         int price = isWeekend() ? 250 : 200;
         if(people[index].isMenber()){
             price *= 0.5;
         }
-        else if(people[index].isConcession() || is_group){
+        else if(people[index].isConcession() || isGroup){
             price *= 0.7;
         }
         else if(time < 700){
@@ -31,11 +31,11 @@ public class GroupTicket extends Ticket{
         return price;
     }
 
-    public int[] get_all_people_price(){
+    public int[] getAllPeoplePrice(){
         int[] prices = new int[people.length];
         
         for(int i = 0; i < people.length; i++){
-            prices[i] = get_personal_price(i);
+            prices[i] = getPersonalPrice(i);
         }
 
         return prices;
@@ -51,7 +51,7 @@ public class GroupTicket extends Ticket{
             }
         }
 
-        if (is_course && coach_num > 0){
+        if (isCourse && coach_num > 0){
             int len = people.length;
             if(len < 10){
                 sum = 3000 * hours;
@@ -62,7 +62,7 @@ public class GroupTicket extends Ticket{
             }
         }
         else{
-            int[] prices = get_all_people_price();
+            int[] prices = getAllPeoplePrice();
 
             for(int p:prices){
                 sum += p;

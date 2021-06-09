@@ -10,7 +10,7 @@ public class PriceTest{
      */
 
     // 2, 1200, is menber
-    @Test public void test_is_menber(){
+    @Test public void testIsMenber(){
         Person p = new Person(25, true);
         PersonalTicket t = new PersonalTicket(p, 2, 1200);
 
